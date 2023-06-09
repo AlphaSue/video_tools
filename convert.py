@@ -2,15 +2,15 @@
 #date=20230116
 #task='use whisper to auto generate video scripts'
 #methods: python convert.py 苹果通用控制.webm apple2
-
+#whisper github: https://github.com/openai/whisper
 from datetime import timedelta
 import os
 import whisper
 import sys
 
 def transcribe_audio(path, output):
-    model = whisper.load_model("base") # Change this to your desired model
-    #model = whisper.load_model("tiny") # Change this to your desired model
+    model = whisper.load_model("large") # Change this to your desired model /
+    # we can choose from tiny, base, small, medium, large.
     print("Whisper model loaded.")
     transcribe = model.transcribe(audio=path)
     segments = transcribe['segments']
